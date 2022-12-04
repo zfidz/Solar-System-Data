@@ -6,7 +6,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
 import PlanetsPage from '../PlanetsPage/PlanetsPage'
 import MoonsPage from '../MoonsPage/MoonsPage'
-
+import PlanetDetailPage from '../PlanetDetailPage/PlanetDetailPage'
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -33,6 +33,7 @@ function App() {
 <Routes>
 <Route path="/" element={<PlanetsPage bodies={bodyState} />}/>
 <Route path="/moons" element={<MoonsPage bodies={bodyState} />}  />
+<Route path="/:planetName" element = {<PlanetDetailPage bodies={bodyState} /> } />
 </Routes>
 </>
   )
