@@ -2,6 +2,7 @@ import {Link} from "react-router-dom"
 
 export default function PlanetCard({body}) {
 if (body.isPlanet === true) {
+  // console.log(body.moons)
   return (
     <>
     <Link to={`/${body.englishName}`} style={{display: 'inline-block'}}>

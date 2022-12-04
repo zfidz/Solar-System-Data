@@ -7,10 +7,9 @@ import './App.css';
 import PlanetsPage from '../PlanetsPage/PlanetsPage'
 import MoonsPage from '../MoonsPage/MoonsPage'
 import PlanetDetailPage from '../PlanetDetailPage/PlanetDetailPage'
-
+import MoonDetailPage from "../MoonDetailPage/MoonDetailPage"
 function App() {
   const [user, setUser] = useState(getUser());
-
     const [bodyState, setBodyState] = useState([]);
     useEffect(function () {
       async function getBodies() {
@@ -25,14 +24,13 @@ function App() {
       getBodies();
     },[]);
 
-
   return (
     <>
     <NavBar />
-
 <Routes>
 <Route path="/" element={<PlanetsPage bodies={bodyState} />}/>
 <Route path="/moons" element={<MoonsPage bodies={bodyState} />}  />
+<Route path="/moons/:moonName" element={<MoonDetailPage bodies={bodyState}/>} />
 <Route path="/:planetName" element = {<PlanetDetailPage bodies={bodyState} /> } />
 </Routes>
 </>
