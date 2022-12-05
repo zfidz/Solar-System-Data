@@ -8,8 +8,11 @@ import PlanetsPage from '../PlanetsPage/PlanetsPage'
 import MoonsPage from '../MoonsPage/MoonsPage'
 import PlanetDetailPage from '../PlanetDetailPage/PlanetDetailPage'
 import MoonDetailPage from "../MoonDetailPage/MoonDetailPage"
+import ProfilePage from "../ProfilePage/ProfilePage"
+
 function App() {
   const [user, setUser] = useState(getUser());
+
     const [bodyState, setBodyState] = useState([]);
     useEffect(function () {
       async function getBodies() {
@@ -25,15 +28,31 @@ function App() {
     },[]);
 
   return (
+    <main className = "App">
+   { user ?
     <>
-    <NavBar />
+    <NavBar user={user} setUser={setUser}/>
 <Routes>
 <Route path="/" element={<PlanetsPage bodies={bodyState} />}/>
 <Route path="/moons" element={<MoonsPage bodies={bodyState} />}  />
 <Route path="/moons/:moonName" element={<MoonDetailPage bodies={bodyState}/>} />
 <Route path="/:planetName" element = {<PlanetDetailPage bodies={bodyState} /> } />
+<Route path={`/${user.name}`} element = {<ProfilePage user={user}/> } />
 </Routes>
 </>
+:
+<>
+<NavBar />
+<Routes>
+<Route path="/" element={<PlanetsPage bodies={bodyState} />}/>
+<Route path="/moons" element={<MoonsPage bodies={bodyState} />}  />
+<Route path="/moons/:moonName" element={<MoonDetailPage bodies={bodyState}/>} />
+<Route path="/:planetName" element = {<PlanetDetailPage bodies={bodyState} /> } />
+<Route path="/authpage" element = {<AuthPage setUser={setUser} /> } />
+</Routes>
+</>
+}
+</main>
   )
 }
 

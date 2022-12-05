@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --white: #FFFFFF;
   --orange: #F67F00;
   --text-light: #968c84;
@@ -85,12 +85,7 @@ p.error-message {
   text-align: center;
 }
 
-form {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 1.25vmin;
-  color: var(--text-light);
-}
+
 
 label {
   font-size: 2vmin;
@@ -105,7 +100,7 @@ input {
   border-radius: .5vmin;
   color: var(--text-dark);
   background-image: none !important; /* prevent lastpass */
-  outline: none;
+  /* outline: none;
 }
 
 input:focus {
@@ -145,4 +140,11 @@ button:disabled, form:invalid button[type="submit"] {
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
+} */
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1.25vmin;
+  color: var(--text-light);
 }

@@ -11,18 +11,16 @@ const planetName = useParams()
     <h1>{planet.englishName}</h1>
     <h2>{planet.discoveryDate}</h2>
     <h2>{planet.discoveredBy}</h2>
-
-    {planet.moons.map((moon, index) => {
-      console.log(moon)
+  {/* {planet.moons.map(moon => {
       return(
-        <div key={index}>
+        <div>
           <h2>{moon.moon}</h2>
         </div>
-      );
-    })}
-
+      )
+    })} */}
   </div>
 ))}
     </>
   );
+  
 }

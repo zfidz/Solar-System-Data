@@ -7,9 +7,6 @@ if (body.bodyType === "Moon") {
       <Link to={`/moons/${body.englishName}`} style={{display: 'inline-block'}}>
       <h2>{body.englishName}</h2></Link>
       <br></br>
-        {/* <button className="btn-sm" onClick={() => console.log('clicked')}>
-          ADD
-        </button> */}
     </>
   );}
 }
