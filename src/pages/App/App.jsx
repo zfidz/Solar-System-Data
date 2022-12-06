@@ -10,6 +10,10 @@ import PlanetDetailPage from '../PlanetDetailPage/PlanetDetailPage'
 import MoonDetailPage from "../MoonDetailPage/MoonDetailPage"
 import ProfilePage from "../ProfilePage/ProfilePage"
 
+
+
+
+
 function App() {
   const [user, setUser] = useState(getUser());
 
@@ -27,6 +31,9 @@ function App() {
       getBodies();
     },[]);
 
+
+
+    
   return (
     <main className = "App">
    { user ?
