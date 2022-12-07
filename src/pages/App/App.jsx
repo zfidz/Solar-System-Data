@@ -40,11 +40,11 @@ function App() {
     <>
     <NavBar user={user} setUser={setUser}/>
 <Routes>
-<Route path="/" element={<PlanetsPage bodies={bodyState} />}/>
+<Route path="/" element={<PlanetsPage user={user} bodies={bodyState} />}/>
 <Route path="/moons" element={<MoonsPage bodies={bodyState} />}  />
 <Route path="/moons/:moonName" element={<MoonDetailPage bodies={bodyState}/>} />
-<Route path="/:planetName" element = {<PlanetDetailPage bodies={bodyState} /> } />
-<Route path={`/${user.name}`} element = {<ProfilePage user={user}/> } />
+<Route path="/:planetName" element = {<PlanetDetailPage  bodies={bodyState} /> } />
+<Route path={`/${user._id}`} element = {<ProfilePage user={user}/> } />
 </Routes>
 </>
 :

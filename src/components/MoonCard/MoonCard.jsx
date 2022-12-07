@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom"
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button'
 
 
 export default function MoonCard({ body }) {
@@ -8,7 +9,8 @@ export default function MoonCard({ body }) {
     return (
       <Card className="  col-md-3 mx-3 my-3 m-3" style={{ margin: '10px' }}>
  <Card.Header>{body.englishName}</Card.Header>
-        <Card.Link href="{`/moons/${body.englishName}`}">Details</Card.Link>
+        <Link to={`/moons/${body.englishName}`} style={{display: 'inline-block'}}>Details</Link>
+        <Button variant="primary" style={{display: 'inline-block'}}>Favorite</Button>
       </Card>
     );
   }

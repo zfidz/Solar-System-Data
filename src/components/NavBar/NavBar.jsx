@@ -17,7 +17,7 @@ export default function NavBar({ user, setUser }) {
 
   return (
     
-    <Navbar className="penguins" expand="lg" bg="dark" variant="dark">
+    <Navbar expand="lg" bg="dark" variant="dark">
     <Container>
       <Navbar.Brand href="/">Home</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -28,9 +28,8 @@ export default function NavBar({ user, setUser }) {
         </Nav>
         <Nav>
         { user ?
-        <>
-        
-          <Nav.Link href={`/${user.name}`}>{user.name}</Nav.Link>
+        <>        
+          <Nav.Link href={`/${user._id}`}>{user.name}</Nav.Link>
           <Nav.Link eventKey={2} href="" onClick={handleLogOut}>
             Log Out
           </Nav.Link>

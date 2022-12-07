@@ -2,10 +2,10 @@ import PlanetCard from '../../components/PlanetCard/PlanetCard'
 
 
 
-export default function PlanetsPage({bodies}) {
+export default function PlanetsPage({bodies, user}) {
   const planetCards = bodies.map((body, i) => {
     i = body.id
-return <PlanetCard key = {i} body={body}/>}
+return <PlanetCard key = {i} user={user} body={body}/>}
 )
   return (
     <>

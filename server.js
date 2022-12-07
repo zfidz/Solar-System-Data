@@ -17,12 +17,17 @@ app.use(express.json());
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
+
+// app.use('/moons', require('./routes/api/profiles'))
+app.use('/planets', require('./routes/api/profiles'))
+
+
 // middleware that adds the user object from a JWT to req.user
 app.use(require('./config/checkToken'));
 
 // Put all API routes here (before the catch-all)
 app.use('/api/users', require('./routes/api/users'));
-
+app.use('/api/profiles', require('./routes/api/profiles'))
 // "catch-all" route that will match all GET requests
 // that don't match an API route defined above
 app.get('/*', function(req, res) {

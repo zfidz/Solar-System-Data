@@ -1,22 +1,34 @@
 import {Link} from "react-router-dom"
 import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
+export default function PlanetCard({body, user}) {
 
-export default function PlanetCard({body}) {
+  const handleClick = async () => {
+    let newFavoritePlanet = {
+      favoritedPlanet: body
+    }
+    const res= await fetch(`/api/profiles/${user._id}`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      // body: JSON.stringify(newFavoritePlanet)
+    })
+console.log(res)
+  }
+
 if (body.isPlanet === true) {
-  // console.log(body.moons)
   return (
     <>
     <Card style={{ width: '18rem' }}>
       <Card.Body>
         <Card.Title>{body.englishName}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-        <Card.Link href="{`/${body.englishName}`}">Details</Card.Link>
+        <Link to={`/${body.englishName}`} style={{display: 'inline-block'}}>Details</Link>
+
+        <Button variant="primary" onClick={handleClick} style={{display: 'inline-block'}}>Favorite</Button>
+
       </Card.Body>
     </Card>
-    <Link to={`/${body.englishName}`} style={{display: 'inline-block'}}>
-      <h2>{body.englishName}</h2></Link>
-      <br></br>
     </>
   );}
 }
