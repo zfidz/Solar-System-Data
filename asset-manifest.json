@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Solar-System-Data/static/css/main.d46927b7.css",
+    "main.js": "/Solar-System-Data/static/js/main.09f239ba.js",
+    "static/media/space.jpg": "/Solar-System-Data/static/media/space.b35152fbab84799bce0e.jpg",
+    "index.html": "/Solar-System-Data/index.html",
+    "main.d46927b7.css.map": "/Solar-System-Data/static/css/main.d46927b7.css.map",
+    "main.09f239ba.js.map": "/Solar-System-Data/static/js/main.09f239ba.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d46927b7.css",
+    "static/js/main.09f239ba.js"
+  ]
+}
