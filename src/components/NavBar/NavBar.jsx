@@ -1,10 +1,9 @@
-import { Link } from 'react-router-dom';
+
 import * as userService from '../../utilities/users-service';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import './NavBar.css'
 
 export default function NavBar({ user, setUser }) {
 
@@ -16,8 +15,7 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    
-    <Navbar expand="lg" bg="dark" variant="dark">
+    <Navbar bg="dark" variant="dark">
     <Container>
       <Navbar.Brand href="/">Home</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -41,30 +39,6 @@ export default function NavBar({ user, setUser }) {
       
     </Container>
   </Navbar>
+
   );
 }
-
-//    <nav>
-//       { user ?
-//       <>
-//       <Link to="">Planets</Link>
-//       &nbsp; | &nbsp;
-//       <Link to="/moons">Moons</Link>
-//       &nbsp; | &nbsp;
-//       <span>Welcome, {user.name}</span>
-//       &nbsp; | &nbsp;
-//       <Link to={`/${user.name}`}>Profile</Link>
-//       &nbsp; | &nbsp;
-//       <Link to="" onClick={handleLogOut}>Log Out</Link>
-//    </>
-//   : 
-//   <>
-//   <Link to="">Planets</Link>
-//   &nbsp; | &nbsp;
-//   <Link to="/moons">Moons</Link>
-//   &nbsp; | &nbsp;
-//   <Link to="/authpage">Login/Sign Up</Link>
-
-// </>
-//   }
-//     </nav>

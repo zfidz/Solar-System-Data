@@ -4,5 +4,5 @@ const profilesCtrl = require("../../controllers/api/profiles");
 
 router.post("/:id", profilesCtrl.create);
 router.get("/:id", profilesCtrl.index)
-router.delete(':id', profilesCtrl.delete)
+router.delete('/:userId/:id', profilesCtrl.delete)
 module.exports = router;

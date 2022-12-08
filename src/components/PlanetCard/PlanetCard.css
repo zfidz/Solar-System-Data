@@ -1,6 +1,33 @@
 .pCard {
-
 display: flex;
-justify-content: center;
+flex-wrap: wrap;
+justify-content: space-between;
+}
 
+.card-title-big {
+  font-size: 6vh;
+}
+
+.card-info {
+  font-size: 2.5vh;
+  text-align: left;
+}
+
+.card-body {
+  width: 37vh;
+  height: 40vh;
+color: white;
+background-color: rgba(0, 0, 0, 0.422);
+border: solid;
+border-color: black;
+border-radius: 1vw;
+margin: 1vw;
+}
+
+.button {
+  text-align: center;
+  height: 4vh;
+  width: 12vh;
+  margin-left: 1vh;
+  margin-right: 1vh;
 }

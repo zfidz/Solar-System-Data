@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
+import "./PlanetCard.css";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import './PlanetCard.css'
-
 
 export default function PlanetCard({ body, user }) {
   const handleClick = async () => {
@@ -16,38 +15,31 @@ export default function PlanetCard({ body, user }) {
     });
   };
 
-  
+  function countMoons(moons) {
+    return moons ? moons.length : 0;
+  }
+  const numMoons = countMoons(body.moons);
+
   if (body.isPlanet === true) {
     return (
-      <div className = "pCard">
-        <Card  style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={body.imageUrl} />
-          <Card.Body>
+      <div className="pCard">
 
-            <Card.Title>{body.englishName}</Card.Title>
-            <Card.Subtitle className="mb-2">
+          <Card.Body className="card-body">
+            <div className="card-title-big">{body.englishName}</div>
+            <div className="card-info">
+              <br></br>
               <ul>
-                <li>{body.meanRadius} km (Radius)</li>
-                <li>{body.avgTemp} K </li>
+                <li>Radius: {body.meanRadius} km</li>
+                <li>Average Temp: {body.avgTemp - 273} C </li>
+                <li>Number of Moons: {numMoons}</li>
               </ul>
-
-            </Card.Subtitle>
-            <Link
-              to={`/${body.englishName}`}
-              style={{ display: "inline-block" }}
-            >
-              Details
-            </Link>
-
-            <Button
-              variant="primary"
-              onClick={handleClick}
-              style={{ display: "inline-block" }}
-            >
+                <br></br>
+            </div>
+            <Button className="button" style={{ fontSize: 20 }} variant="primary" href={`/${body.englishName}`}>Details</Button>
+            <Button className="button" style={{ fontSize: 20 }} variant="warning" onClick={handleClick}>
               Favorite
             </Button>
           </Card.Body>
-        </Card>
       </div>
     );
   }

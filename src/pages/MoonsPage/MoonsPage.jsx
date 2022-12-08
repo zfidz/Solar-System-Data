@@ -8,7 +8,7 @@ export default function MoonsPage({bodies}) {
       return (
         <>
         <h1>Moons</h1>
-        <div className="d-flex flex-wrap justify-content-center">
+        <div className=" d-flex flex-wrap justify-content-center">
       {moonCards}
         </div>
         </>

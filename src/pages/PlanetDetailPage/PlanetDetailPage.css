@@ -1,15 +1,47 @@
-.PlanetsPage {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1.6fr 3.5fr 3fr;
-  grid-template-rows: 1fr;
-  border-radius: 2vmin;
+.planet-detail-page{
+  color:white;
+}
+.planet-header{
+  font-size: 10vh;
+}
+.detail-page-header{
+  font-size: 5vh;
 }
 
-.PlanetsPage aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.planet-container {
   align-items: center;
-  margin: 3vmin 2vmin;
+  display: flex;
+  flex-direction: row;
+}
+.planet-add-info {
+  background-color: rgba(0, 0, 0, 0.422);
+  margin: 1vw;
+  border-color: black;
+border-radius: 1vw;
+margin: 1vw;
+}
+
+.planet-history {
+  background-color: rgba(0, 0, 0, 0.422);
+  margin: 1vw;
+  border-color: black;
+border-radius: 1vw;
+margin: 1vw;
+}
+
+.planet-left {
+  width: 50%;
+}
+
+.planet-information{
+  font-size: 3vh;
+}
+
+.planet-right {
+  background-color: rgba(0, 0, 0, 0.422);
+  width: 50%;
+  margin: 1vw;;
+  border-color: black;
+border-radius: 1vw;
+margin: 1vw;
 }

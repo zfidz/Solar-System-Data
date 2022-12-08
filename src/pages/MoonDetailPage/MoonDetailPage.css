@@ -1,15 +1,47 @@
-.PlanetsPage {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1.6fr 3.5fr 3fr;
-  grid-template-rows: 1fr;
-  border-radius: 2vmin;
+.moon-detail-page{
+  color:white;
+}
+.moon-header{
+  font-size: 10vh;
+}
+.detail-page-header{
+  font-size: 5vh;
 }
 
-.PlanetsPage aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.moon-container {
   align-items: center;
-  margin: 3vmin 2vmin;
+  display: flex;
+  flex-direction: row;
+}
+.moon-add-info {
+  background-color: rgba(0, 0, 0, 0.422);
+  margin: 1vw;
+  border-color: black;
+border-radius: 1vw;
+margin: 1vw;
+}
+
+.moon-history {
+  background-color: rgba(0, 0, 0, 0.422);
+  margin: 1vw;
+  border-color: black;
+border-radius: 1vw;
+margin: 1vw;
+}
+
+.moon-left {
+  width: 50%;
+}
+
+.moon-information{
+  font-size: 3vh;
+}
+
+.moon-right {
+  background-color: rgba(0, 0, 0, 0.422);
+  width: 50%;
+  margin: 1vw;;
+  border-color: black;
+border-radius: 1vw;
+margin: 1vw;
 }

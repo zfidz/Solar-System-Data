@@ -1,21 +1,20 @@
 
 
-export default function FavoritePlanetsCard ({planet}) {
+export default function FavoritePlanetsCard ({planet, user, setPlanetFavorite, id}) {
 
     const handleClick = async () => {
-        let deletePlanet = {
-          
-        };
-        const res = await fetch(`/api/profiles/${user._id}`, {
-          method: "DELETE",
-          headers: { "Content-Type": "application/json" },
-        });
-      };
 
-    console.log(planet)
+        const response = await fetch(`/api/profiles/${user._id}/${id}`, {
+          method: 'DELETE'
+        }).then(res => res.json())
+        console.log(response)
+        setPlanetFavorite(response.favorites)
+      }
+
+
 return(
     <>
-    {planet} <button>delete</button>
+    {planet} <button onClick={handleClick}>delete</button>
     </>
 )
 }

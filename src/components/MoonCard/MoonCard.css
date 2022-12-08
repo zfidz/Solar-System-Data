@@ -1,0 +1,15 @@
+.moon-title-big {
+    font-size: 3vh;
+
+    }
+ .moonCard {
+    align-items: center;
+    width: 20vw;
+    height: 10vh;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.422);
+    border: solid;
+    border-color: black;
+    border-radius: 1vw;
+    margin: 1vh;
+ }

@@ -8,9 +8,12 @@ export default function PlanetsPage({bodies, user}) {
 return <PlanetCard key = {i} user={user} body={body}/>}
 )
   return (
-    <div className="planetCards">
-      <h1>Planets</h1>
+    <div className='planetPage'>
+  <h1>Planets</h1>
+    <div className="planetCards" style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
       {planetCards }
     </div>
+    
+</div >
   );
 }

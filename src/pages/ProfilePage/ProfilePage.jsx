@@ -10,7 +10,6 @@ export default function ProfilePage({ user }) {
   useEffect(() => {
     async function getFavorites() {
       const response = await sendRequest(`/api/profiles/${user._id}`);
-      console.log(response.favorites);
 setNewPlanetFavorite(response.favorites)
     }
    getFavorites()
@@ -23,7 +22,7 @@ setNewPlanetFavorite(response.favorites)
           <div>
       <h2>favoritePlanets</h2>
       {newPlanetFavorite.map((favorites, i) => (
-        <FavoritePlanetsCard key={i} planet={favorites.favoritedPlanet} />
+        <FavoritePlanetsCard key={i} user={user} id={favorites._id} setPlanetFavorite ={setNewPlanetFavorite} planet={favorites.favoritedPlanet} />
       ))}
     </div>
     :
