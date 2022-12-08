@@ -1,25 +1,35 @@
-import { useState, useEffect } from 'react';
-import sendRequest from '../../utilities/send-request';
+import { useState, useEffect } from "react";
+import FavoritePlanetsCard from "../../components/FavoritePlanetsCard/FavouritePlanetsCard";
+import sendRequest from "../../utilities/send-request";
 
+export default function ProfilePage({ user }) {
+  const [newPlanetFavorite, setNewPlanetFavorite] = useState([]);
 
-export default function ProfilePage({user}) {
-    const [newFavorites, setNewFavorites] = useState([])
+  const [pageLoaded, setPageLoaded] = useState(false);
+  
+  useEffect(() => {
+    async function getFavorites() {
+      const response = await sendRequest(`/api/profiles/${user._id}`);
+      console.log(response.favorites);
+setNewPlanetFavorite(response.favorites)
+    }
+   getFavorites()
+   setPageLoaded(true)
+  }, [])
 
-    useEffect (function () {
-        async function getFavorites() {
-          const response = await sendRequest(`/${user._id}`)
-              console.log(response.favorites)
-              setNewFavorites(response.favorites)
-            }
-        getFavorites()
-          }, [])
-
-
-return (
-<>
-<h1>{user.name}</h1>
+  return (
+    <>
+    {pageLoaded ?
+          <div>
+      <h2>favoritePlanets</h2>
+      {newPlanetFavorite.map((favorites, i) => (
+        <FavoritePlanetsCard key={i} planet={favorites.favoritedPlanet} />
+      ))}
+    </div>
+    :
+    "loading"
+    
+  }
 </>
-)
-
-
+  );
 }

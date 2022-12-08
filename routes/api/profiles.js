@@ -3,5 +3,6 @@ const router = express.Router();
 const profilesCtrl = require("../../controllers/api/profiles");
 
 router.post("/:id", profilesCtrl.create);
-router.get
+router.get("/:id", profilesCtrl.index)
+router.delete(':id', profilesCtrl.delete)
 module.exports = router;

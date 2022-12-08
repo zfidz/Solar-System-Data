@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import './PlanetCard.css'
+
 
 export default function PlanetCard({ body, user }) {
   const handleClick = async () => {
@@ -12,19 +14,23 @@ export default function PlanetCard({ body, user }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newFavoritePlanet),
     });
-    console.log(newFavoritePlanet);
-    console.log(res)
   };
 
   
   if (body.isPlanet === true) {
     return (
-      <>
-        <Card style={{ width: "18rem" }}>
+      <div className = "pCard">
+        <Card  style={{ width: "18rem" }}>
+          <Card.Img variant="top" src={body.imageUrl} />
           <Card.Body>
+
             <Card.Title>{body.englishName}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              Card Subtitle
+            <Card.Subtitle className="mb-2">
+              <ul>
+                <li>{body.meanRadius} km (Radius)</li>
+                <li>{body.avgTemp} K </li>
+              </ul>
+
             </Card.Subtitle>
             <Link
               to={`/${body.englishName}`}
@@ -42,7 +48,7 @@ export default function PlanetCard({ body, user }) {
             </Button>
           </Card.Body>
         </Card>
-      </>
+      </div>
     );
   }
 }

@@ -1,5 +1,5 @@
 import PlanetCard from '../../components/PlanetCard/PlanetCard'
-
+import './PlanetsPage.css'
 
 
 export default function PlanetsPage({bodies, user}) {
@@ -8,9 +8,9 @@ export default function PlanetsPage({bodies, user}) {
 return <PlanetCard key = {i} user={user} body={body}/>}
 )
   return (
-    <>
-    <h1>Planets</h1>
-  {planetCards }
-    </>
+    <div className="planetCards">
+      <h1>Planets</h1>
+      {planetCards }
+    </div>
   );
 }
