@@ -1,14 +1,8 @@
-/* .AuthPage {
-  height: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  border-radius: 2vmin;
+.AuthPage {
+align-self: center;
+width: 50%;
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
 }
-
-.AuthPage h3 {
-  margin-top: 4vmin;
-  text-align: center;
-  color: var(--text-light);
-  cursor: pointer;
-} */

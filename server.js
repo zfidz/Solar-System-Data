@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
@@ -8,6 +9,8 @@ require('dotenv').config();
 require('./config/database');
 
 const app = express();
+
+app.use(cors())
 
 app.use(logger('dev'));
 // Process data in body of request if 

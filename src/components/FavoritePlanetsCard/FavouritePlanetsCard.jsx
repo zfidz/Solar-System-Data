@@ -1,3 +1,6 @@
+import './FavoritePlanetsCard.css'
+import { Link } from 'react-router-dom'
+
 
 
 export default function FavoritePlanetsCard ({planet, user, setPlanetFavorite, id}) {
@@ -13,8 +16,9 @@ export default function FavoritePlanetsCard ({planet, user, setPlanetFavorite, i
 
 
 return(
-    <>
+    <div className='favoriteCard'>
     {planet} <button onClick={handleClick}>delete</button>
-    </>
+<Link to={`/${planet}`}>Details</Link>
+    </div>
 )
 }
