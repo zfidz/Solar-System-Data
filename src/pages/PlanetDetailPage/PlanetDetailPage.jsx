@@ -29,6 +29,10 @@ export default function PlanetsPage({ bodies }) {
                 </div>
                 <div className="planet-add-info">
                 <div className="detail-page-header">Additional Information</div>
+                <div className="planet-information">
+                  {planet.gravity}
+                  {planet.density}
+</div>
                 </div>
               </div>
               <div className="planet-right">

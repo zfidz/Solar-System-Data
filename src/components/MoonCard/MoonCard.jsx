@@ -9,8 +9,8 @@ export default function MoonCard({ body }) {
     return (
       <div className="moonCard">
             <div className="moon-title-big">{body.englishName}</div>
-        <Button className="button"  variant="primary" href={`/moons/${body.englishName}`}>Details</Button>
-        <Button className="button" variant="warning">Favorite</Button>
+        <Button className="button" size="sm"  variant="primary" href={`/moons/${body.englishName}`}>Details</Button>
+        <Button className="button"  variant="warning">Favorite</Button>
 
       </div>
     );

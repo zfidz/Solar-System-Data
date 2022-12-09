@@ -36,9 +36,16 @@ export default function PlanetCard({ body, user }) {
                 <br></br>
             </div>
             <Button className="button" style={{ fontSize: 20 }} variant="primary" href={`/${body.englishName}`}>Details</Button>
+          { user ?
+            <>        
             <Button className="button" style={{ fontSize: 20 }} variant="warning" onClick={handleClick}>
               Favorite
             </Button>
+          </>          
+              :
+          <>
+          </>
+            }
           </Card.Body>
       </div>
     );
