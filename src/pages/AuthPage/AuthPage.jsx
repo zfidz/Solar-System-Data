@@ -9,13 +9,13 @@ export default function AuthPage({ setUser }) {
   return (
     <div className="AuthPage">
       <Row>
-        <Col xs={12} sm={8} md={6} lg={4} className="col-6 mx-auto">
+        <Col >
           <h1>AuthPage</h1>
           <Form>
             <LoginForm setUser={setUser} />
             <p>Don't have an account?</p>
             <Button onClick={() => setShowSignUp(true)}>Sign up</Button>
-          </Form>
+          </Form> 
           {showSignUp && <SignUpForm setUser={setUser} />}
         </Col>
       </Row>
