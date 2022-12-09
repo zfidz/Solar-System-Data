@@ -20,9 +20,9 @@ async function index(req, res) {
 }
 
 async function deleteBody(req, res) {
-  console.log('made it to controllers')
+  // console.log('made it to controllers')
   const profile = await Profile.findOne({user: req.params.userId });
-  console.log(profile)
+  // console.log(profile)
   profile.favorites.remove(req.params.id);
   await profile.save();
   res.json(profile);

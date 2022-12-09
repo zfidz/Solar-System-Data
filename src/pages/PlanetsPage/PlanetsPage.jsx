@@ -7,6 +7,9 @@ export default function PlanetsPage({bodies, user}) {
     i = body.id
 return <PlanetCard key = {i} user={user} body={body}/>}
 )
+
+
+
   return (
     <div className='planetPage'>
   <h1>Planets</h1>
