@@ -17,8 +17,10 @@ export default function FavoritePlanetsCard ({planet, user, setPlanetFavorite, i
 
 return(
     <div className='favoriteCard'>
-    {planet} <button onClick={handleClick}>delete</button>
+      <span><div className="favorite-title-big">{planet}</div></span>
 <Link to={`/${planet}`}>Details</Link>
+    <button onClick={handleClick}>delete</button>
+
     </div>
 )
 }
