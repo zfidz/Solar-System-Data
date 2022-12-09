@@ -22,8 +22,8 @@ My project is a web application that displays data about the planets and moons i
 - figma(for ERD and wireframe)
 
 ## Screenshots
-
-
+![AuthPage](public/AuthPage.png)
+![PlanetsPage](public/PlanetsPage.png)
 
  ## Wireframe
 
@@ -35,12 +35,18 @@ My project is a web application that displays data about the planets and moons i
 
 ## Trello
 
-
-
-## Pseudocode
-
-
-
+https://trello.com/b/gzSOtG3B/solar-system
 
 ## Future Updates
 
+- finish moons
+
+- add asteroids/comets
+
+- add pictures
+
+- implement NASA API
+
+- Reorder Favourites
+
+- Sort Planet/moon pages
