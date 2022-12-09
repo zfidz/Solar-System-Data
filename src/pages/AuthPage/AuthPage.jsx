@@ -11,11 +11,11 @@ export default function AuthPage({ setUser }) {
       <Row>
         <Col >
           <h1>AuthPage</h1>
-          <Form>
+          <div>
             <LoginForm setUser={setUser} />
             <p>Don't have an account?</p>
             <Button onClick={() => setShowSignUp(true)}>Sign up</Button>
-          </Form> 
+          </div> 
           {showSignUp && <SignUpForm setUser={setUser} />}
         </Col>
       </Row>

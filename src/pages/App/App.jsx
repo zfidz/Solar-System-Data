@@ -47,9 +47,7 @@ function App() {
             />
             <Route
               path={`/${user._id}`}
-              element={
-                <ProfilePage user={user} />
-              }
+              element={<ProfilePage user={user} />}
             />
           </Routes>
         </>

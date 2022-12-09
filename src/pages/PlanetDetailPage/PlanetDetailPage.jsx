@@ -23,15 +23,25 @@ export default function PlanetsPage({ bodies }) {
                     </div>
                 <br></br>
                 <div className="planet-information">
-                  Discorvered By:{" "}
+                  Discovered By:{" "}
                   {planet.discoveredBy ? planet.discoveredBy : "Not Available"}
                 </div>
                 </div>
                 <div className="planet-add-info">
                 <div className="detail-page-header">Additional Information</div>
                 <div className="planet-information">
-                  {planet.gravity}
-                  {planet.density}
+                  <br></br>
+                  Gravity:{planet.gravity}m/s
+                  <br></br>
+                  Density:{planet.density}g/cm³
+                  <br></br>
+                  Aphelion:{planet.aphelion}km
+                  <br></br>
+                  Perihelion:{planet.perihelion}km
+                  <br></br>
+                  Orbital Period: {planet.sideralOrbit} Days
+                  <br></br>
+                  Orbital Rotation: {planet.sideralRotation} Hours
 </div>
                 </div>
               </div>
@@ -44,7 +54,7 @@ export default function PlanetsPage({ bodies }) {
                     );
                   })
                 ) : (
-                  <div>"no satellites"</div>
+                  <div>"No Satellites"</div>
                 )}
               </div>
             </div>
