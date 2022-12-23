@@ -1,39 +1,38 @@
-const express = require('express');
+const express = require("express");
 // const cors = require('cors')
-const path = require('path');
-const favicon = require('serve-favicon');
-const logger = require('morgan');
+const path = require("path");
+const favicon = require("serve-favicon");
+const logger = require("morgan");
 
-require('dotenv').config();
+require("dotenv").config();
 // Connect to db after the dotenv above
-require('./config/database');
+require("./config/database");
 
 const app = express();
 
 // app.use(cors())
 
-app.use(logger('dev'));
-// Process data in body of request if 
+app.use(logger("dev"));
+// Process data in body of request if
 // Content-Type: 'application/json'
 // and put that data on req.body
 app.use(express.json());
-app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
-app.use(express.static(path.join(__dirname, 'build')));
-
+app.use(favicon(path.join(__dirname, "build", "favicon.ico")));
+app.use(express.static(path.join(__dirname, "build")));
 
 // middleware that adds the user object from a JWT to req.user
-app.use(require('./config/checkToken'));
+app.use(require("./config/checkToken"));
 
 // Put all API routes here (before the catch-all)
-app.use('/api/users', require('./routes/api/users'));
-app.use('/api/profiles', require('./routes/api/profiles'))
+app.use("/api/users", require("./routes/api/users"));
+app.use("/api/profiles", require("./routes/api/profiles"));
 // "catch-all" route that will match all GET requests
 // that don't match an API route defined above
-app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-module.export = app
+module.exports = app;
 
 // const port = process.env.PORT || 3001;
 
