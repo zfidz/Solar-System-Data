@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors')
+// const cors = require('cors')
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
@@ -10,7 +10,7 @@ require('./config/database');
 
 const app = express();
 
-app.use(cors())
+// app.use(cors())
 
 app.use(logger('dev'));
 // Process data in body of request if 
@@ -33,8 +33,10 @@ app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-const port = process.env.PORT || 3001;
+module.export = app
 
-app.listen(port, function() {
-  console.log(`Express app running on port ${port}`);
-});
+// const port = process.env.PORT || 3001;
+
+// app.listen(port, function() {
+//   console.log(`Express app running on port ${port}`);
+// });
